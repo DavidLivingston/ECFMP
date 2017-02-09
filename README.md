@@ -1,53 +1,48 @@
-Cordova插件开发测试项目
+Cordova plug-in development test project
 ==============
 
-本项目主要用来调试插件开发，技术采用framework7+requirejs+react+pubsubjs，因此本项目可视为整合框架用来做开发基础。
+This project is mainly used to debug plug-in development, technology uses framework7 + requirejs + react + pubsubjs, so the project can be used as an integrated framework for development based.
 
-#####包含已测试的插件:
+#####Include tested plugins:
 - [cordova-plugins-activity](https://github.com/cfansimon/cordova-plugins-activity)
 - [cordova-plugin-ble-central](https://github.com/don/cordova-plugin-ble-central)
 - [BluetoothSerial](https://github.com/don/BluetoothSerial)
 
-#####部分截图
-<img src="https://raw.githubusercontent.com/cfansimon/framework7-react-requirejs/master/screenshot/Screenshot_2015-09-10-11-49-50.png" width="200px" />
-<img src="https://raw.githubusercontent.com/cfansimon/framework7-react-requirejs/master/screenshot/Screenshot_2015-10-20-23-43-14.png" width="200px" />
-<img src="https://raw.githubusercontent.com/cfansimon/framework7-react-requirejs/master/screenshot/Screenshot_2015-10-20-23-43-18.png" width="200px" />
-<img src="https://raw.githubusercontent.com/cfansimon/framework7-react-requirejs/master/screenshot/Screenshot_2015-10-20-23-43-41.png" width="200px" />
 
-#####开发流程:
-- 提前条件：自行安装nodejs、grunt、cordova-cli、babel
-- 注：babel安装方式有变化，如下：
+#####Development Process:
+- Preconditions: self-install nodejs, grunt, cordova-cli, babel
+- Note: babel installation changes, as follows:
 - npm install --global babel-cli
 - npm install babel-preset-react
 
-先安装nodejs依赖
+Install nodejs dependencies first
 ```bash
 $ npm install
 ```
-shell进入www_src目录，启动jsx即时编译，--compact 压缩(变量名不压缩) --no-comments 删除注释
+Shell into the www_src directory, start jsx real-time compilation, - compact compression (variable name is not compressed) --no-comments delete notes
 ```bash
 babel --presets react src --watch --out-dir build --compact --no-comments
 ```
-修改代码过程中运行以下命令，会自动刷新浏览器显示结果
+When you run the following command during the modification of the code, the browser display is automatically refreshed
 ```bash
 $ grunt debug
 ```
-一个阶段编码结束后，运行以下命令，可以压缩合并部分js源码和html页面(www_src/src目录下源码暂不压缩)到根目录的www目录
+After a stage of coding, run the following command, you can compress the merge part of the js source and html pages (www_src / src directory source code not compressed) to the root directory www directory
 ```bash
 $ grunt build
 ```
-最终浏览器再预览一遍，看看压缩后的代码有没有出错
+Finally, the browser preview again to see if the compressed code has an error
 ```bash
 $ grunt server
 ```
-完成工作，Android的真机调试，记得先插上手机，再运行以下命令
+Complete the work, Android real machine debugging, remember to plug in the phone, then run the following command
 ```bash
 $ cordova run
 ```
 
-特别说明：对于js测试不了的插件，需要在android studio中测试，比如蓝牙插件，可以先用以下命令把全部源码拷贝到android
+Special Note: js can not test the plug-in, you need to test android studio, such as Bluetooth plug-in, you can first use the following command to copy all the source code to android
 ```bash
 $ grunt build-src && cordova build
 ```
-然后把根目录下platforms/android工程导入到android studio中做开发测试
+And then the root directory under platform / android project into android studio to do development testing
 # ECFMP
