@@ -1,0 +1,25 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-ble-central": {
+            "PACKAGE_NAME": "com.zlzkj.testplugin"
+        }
+    },
+    "dependent_plugins": {
+        "com.zlzkj.cordova.activity": {
+            "PACKAGE_NAME": "com.zlzkj.testplugin"
+        },
+        "cordova-plugin-bluetooth-serial": {
+            "PACKAGE_NAME": "com.zlzkj.testplugin"
+        },
+        "org.apache.cordova.splashscreen": {
+            "PACKAGE_NAME": "com.zlzkj.testplugin"
+        }
+    }
+}
